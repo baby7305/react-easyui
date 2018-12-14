@@ -5,6 +5,8 @@ import About from "./home/About";
 import Index from "./home/Home";
 import Users from "./home/Users";
 
+import CheckboxBasic from "./checkbox/Basic";
+
 class App extends Component {
   render() {
     return (
@@ -21,11 +23,19 @@ class App extends Component {
               <Link to="/users/">Users</Link>
             </li>
           </ul>
+          <h2>checkbox content</h2>
+          <ul>
+            <li>
+              <Link to="/checkbox/basic">basic</Link>
+            </li>
+          </ul>
         </nav>
 
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
         <Route path="/users/" component={Users} />
+        <h2>checkbox content</h2>
+        <Route path="/checkbox/basic" component={CheckboxBasic} />
       </div>
     );
   }
