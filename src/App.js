@@ -5,6 +5,12 @@ import About from "./home/About";
 import Index from "./home/Home";
 import Users from "./home/Users";
 
+import DialogBasic from "./dialog/Basic";
+import DialogCustomStyle from "./dialog/Custom Dialog Style";
+import DialogDraggableAndResizable from "./dialog/Draggable And Resizable";
+import DialogNoBorder from "./dialog/No Border";
+import DialogToolbarAndButton from "./dialog/Toolbar and Button";
+
 class App extends Component {
   render() {
     return (
@@ -21,11 +27,35 @@ class App extends Component {
               <Link to="/users/">Users</Link>
             </li>
           </ul>
+          <h2>Dialog content</h2>
+          <ul>
+            <li>
+              <Link to="/dialog/basic">basic</Link>
+            </li>
+            <li>
+              <Link to="/dialog/custom-style">custom-style</Link>
+            </li>
+            <li>
+              <Link to="/dialog/draggable-resizable">draggable-resizable</Link>
+            </li>
+            <li>
+              <Link to="/dialog/no-border">no-border</Link>
+            </li>
+            <li>
+              <Link to="/dialog/toolbar-button">toolbar-button</Link>
+            </li>
+          </ul>
         </nav>
 
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
         <Route path="/users/" component={Users} />
+        <h2>Dialog content</h2>
+        <Route path="/dialog/basic" component={DialogBasic} />
+        <Route path="/dialog/custom-style" component={DialogCustomStyle} />
+        <Route path="/dialog/draggable-resizable" component={DialogDraggableAndResizable} />
+        <Route path="/dialog/no-border" component={DialogNoBorder} />
+        <Route path="/dialog/toolbar-button" component={DialogToolbarAndButton} />
       </div>
     );
   }
