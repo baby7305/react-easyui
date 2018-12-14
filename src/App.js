@@ -5,6 +5,9 @@ import About from "./home/About";
 import Index from "./home/Home";
 import Users from "./home/Users";
 
+import DroppableBasic from "./droppable/Basic";
+import DroppableShopping from "./droppable/Shopping";
+
 class App extends Component {
   render() {
     return (
@@ -21,11 +24,23 @@ class App extends Component {
               <Link to="/users/">Users</Link>
             </li>
           </ul>
+          <h2>Droppable content</h2>
+          <ul>
+            <li>
+              <Link to="/droppable/basic">basic</Link>
+            </li>
+            <li>
+              <Link to="/droppable/shopping">shopping</Link>
+            </li>
+          </ul>
         </nav>
 
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
         <Route path="/users/" component={Users} />
+        <h2>Droppable content</h2>
+        <Route path="/droppable/basic" component={DroppableBasic} />
+        <Route path="/droppable/shopping" component={DroppableShopping} />
       </div>
     );
   }
