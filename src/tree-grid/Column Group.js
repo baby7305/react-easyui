@@ -1,0 +1,144 @@
+import React from 'react';
+import { TreeGrid, GridColumn, GridColumnGroup, GridHeaderRow } from 'rc-easyui';
+
+class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            data: this.getData()
+        }
+    }
+    getData() {
+        return [
+            {
+                id: 1,
+                region: "Wyoming",
+                children: [
+                    {
+                        id: 11,
+                        region: "Albin",
+                        f1: 2000,
+                        f2: 1800,
+                        f3: 1903,
+                        f4: 2183,
+                        f5: 2133,
+                        f6: 1923,
+                        f7: 2018,
+                        f8: 1838
+                    },
+                    {
+                        id: 12,
+                        region: "Canon",
+                        f1: 2000,
+                        f2: 1800,
+                        f3: 1903,
+                        f4: 2183,
+                        f5: 2133,
+                        f6: 1923,
+                        f7: 2018,
+                        f8: 1838
+                    },
+                    {
+                        id: 13,
+                        region: "Egbert",
+                        f1: 2000,
+                        f2: 1800,
+                        f3: 1903,
+                        f4: 2183,
+                        f5: 2133,
+                        f6: 1923,
+                        f7: 2018,
+                        f8: 1838
+                    }
+                ]
+            },
+            {
+                id: 2,
+                region: "Washington",
+                children: [
+                    {
+                        id: 21,
+                        region: "Bellingham",
+                        f1: 2000,
+                        f2: 1800,
+                        f3: 1903,
+                        f4: 2183,
+                        f5: 2133,
+                        f6: 1923,
+                        f7: 2018,
+                        f8: 1838
+                    },
+                    {
+                        id: 22,
+                        region: "Chehalis",
+                        f1: 2000,
+                        f2: 1800,
+                        f3: 1903,
+                        f4: 2183,
+                        f5: 2133,
+                        f6: 1923,
+                        f7: 2018,
+                        f8: 1838
+                    },
+                    {
+                        id: 23,
+                        region: "Ellensburg",
+                        f1: 2000,
+                        f2: 1800,
+                        f3: 1903,
+                        f4: 2183,
+                        f5: 2133,
+                        f6: 1923,
+                        f7: 2018,
+                        f8: 1838
+                    },
+                    {
+                        id: 24,
+                        region: "Monroe",
+                        f1: 2000,
+                        f2: 1800,
+                        f3: 1903,
+                        f4: 2183,
+                        f5: 2133,
+                        f6: 1923,
+                        f7: 2018,
+                        f8: 1838
+                    }
+                ]
+            }
+        ];
+    }
+    render() {
+        return (
+            <div>
+                <h2>Column Group</h2>
+                <TreeGrid
+                    style={{ height: 250 }}
+                    data={this.state.data}
+                    idField="id"
+                    treeField="region"
+                >
+                    <GridColumnGroup>
+                        <GridHeaderRow>
+                            <GridColumn field="region" title="Region" rowspan={2} width="25%"></GridColumn>
+                            <GridColumn title="2017" colspan={4}></GridColumn>
+                            <GridColumn title="2018" colspan={4}></GridColumn>
+                        </GridHeaderRow>
+                        <GridHeaderRow>
+                            <GridColumn field="f1" title="1st qrt." align="right"></GridColumn>
+                            <GridColumn field="f2" title="2st qrt." align="right"></GridColumn>
+                            <GridColumn field="f3" title="3st qrt." align="right"></GridColumn>
+                            <GridColumn field="f4" title="4st qrt." align="right"></GridColumn>
+                            <GridColumn field="f5" title="1st qrt." align="right"></GridColumn>
+                            <GridColumn field="f6" title="2st qrt." align="right"></GridColumn>
+                            <GridColumn field="f7" title="3st qrt." align="right"></GridColumn>
+                            <GridColumn field="f8" title="4st qrt." align="right"></GridColumn>
+                        </GridHeaderRow>
+                    </GridColumnGroup>
+                </TreeGrid>
+            </div>
+        );
+    }
+}
+
+export default App;
