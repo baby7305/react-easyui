@@ -5,6 +5,10 @@ import About from "./home/About";
 import Index from "./home/Home";
 import Users from "./home/Users";
 
+import TagBoxAutocomplete from "./tag-box/Autocomplete";
+import TagBoxBasic from "./tag-box/Basic";
+import TagBoxStyle from "./tag-box/Style";
+
 class App extends Component {
   render() {
     return (
@@ -21,11 +25,27 @@ class App extends Component {
               <Link to="/users/">Users</Link>
             </li>
           </ul>
+          <h2>TagBox content</h2>
+          <ul>
+            <li>
+              <Link to="/tag-box/autocomplete">autocomplete</Link>
+            </li>
+            <li>
+              <Link to="/tag-box/basic">basic</Link>
+            </li>
+            <li>
+              <Link to="/tag-box/style">style</Link>
+            </li>
+          </ul>
         </nav>
 
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
         <Route path="/users/" component={Users} />
+        <h2>TagBox content</h2>
+        <Route path="/tag-box/autocomplete" component={TagBoxAutocomplete} />
+        <Route path="/tag-box/basic" component={TagBoxBasic} />
+        <Route path="/tag-box/style" component={TagBoxStyle} />
       </div>
     );
   }
