@@ -5,6 +5,9 @@ import About from "./home/About";
 import Index from "./home/Home";
 import Users from "./home/Users";
 
+import VirtualScrollBasic from "./virtual-scroll/Basic";
+import VirtualScrollLazyLoad from "./virtual-scroll/Lazy Load";
+
 class App extends Component {
   render() {
     return (
@@ -21,11 +24,23 @@ class App extends Component {
               <Link to="/users/">Users</Link>
             </li>
           </ul>
+          <h2>VirtualScroll content</h2>
+          <ul>
+            <li>
+              <Link to="/virtual-scroll/basic">basic</Link>
+            </li>
+            <li>
+              <Link to="/virtual-scroll/lazy-load">lazy-load</Link>
+            </li>
+          </ul>
         </nav>
 
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
         <Route path="/users/" component={Users} />
+        <h2>VirtualScroll content</h2>
+        <Route path="/virtual-scroll/basic" component={VirtualScrollBasic} />
+        <Route path="/virtual-scroll/lazy-load" component={VirtualScrollLazyLoad} />
       </div>
     );
   }
