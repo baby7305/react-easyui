@@ -5,6 +5,11 @@ import About from "./home/About";
 import Index from "./home/Home";
 import Users from "./home/Users";
 
+import SliderBasic from "./slider/Basic";
+import SliderRange from "./slider/Range";
+import SliderRule from "./slider/Rule";
+import SliderVertical from "./slider/Vertical";
+
 class App extends Component {
   render() {
     return (
@@ -21,11 +26,31 @@ class App extends Component {
               <Link to="/users/">Users</Link>
             </li>
           </ul>
+          <h2>Slider content</h2>
+          <ul>
+            <li>
+              <Link to="/slider/basic">basic</Link>
+            </li>
+            <li>
+              <Link to="/slider/range">range</Link>
+            </li>
+            <li>
+              <Link to="/slider/rule">rule</Link>
+            </li>
+            <li>
+              <Link to="/slider/vertical">vertical</Link>
+            </li>
+          </ul>
         </nav>
 
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
         <Route path="/users/" component={Users} />
+        <h2>Slider content</h2>
+        <Route path="/slider/basic" component={SliderBasic} />
+        <Route path="/slider/range" component={SliderRange} />
+        <Route path="/slider/rule" component={SliderRule} />
+        <Route path="/slider/vertical" component={SliderVertical} />
       </div>
     );
   }
